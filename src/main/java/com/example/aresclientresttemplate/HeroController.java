@@ -25,12 +25,11 @@ public class HeroController {
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     public Collection<Hero> getHero() {
-        final ResponseEntity<Resources<Hero>> heroResponse = restTemplate
+        ResponseEntity<Resources<Hero>> heroResponse = restTemplate
                 .exchange(URL, HttpMethod.GET, null,
                         new ParameterizedTypeReference<Resources<Hero>>() {
                         });
-        Collection<Hero> heroList = heroResponse.getBody().getContent();
-        return heroList;
+        return heroResponse.getBody().getContent();
     }
 
     // TODO: CRUD operations
