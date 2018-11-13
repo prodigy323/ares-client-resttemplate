@@ -3,6 +3,7 @@ package com.example.aresclientresttemplate;
 import lombok.Data;
 
 @Data
+@ToString
 public class Hero {
 
     private String firstName;
